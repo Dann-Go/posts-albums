@@ -1,5 +1,6 @@
 import Component from "../models/component.model.js";
 
+
 export default class Post extends Component {
     constructor(userId, id, title, body) {
         super();
@@ -7,6 +8,7 @@ export default class Post extends Component {
         this.id = id;
         this.title = title;
         this.body = body;
+        this.showComments = false;
     }
 
     get template() {
@@ -20,13 +22,11 @@ export default class Post extends Component {
         <div class="post__body">${this.body}</div>
         <div class="post__comments">
             <div class="comments__toolbar">
-                <button type="button" class="custom-btn visibility-comments-btn">Show Comments</button>
+                <button type="button" class="custom-btn visibility-comments-btn" id="showCommentsBtn">Show Comments</button>
             </div>
-            <ul class="comments__list"></ul>
+            <ul class="comments__list" id="commentsList-${this.id}"></ul>
         </div>
     </div>`
     }
-
-
 }
 

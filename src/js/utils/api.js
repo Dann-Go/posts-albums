@@ -6,10 +6,9 @@ export default class Api {
         return response.json();
     }
 
-    static async getPostsByUserId(userId) {
-    }
-
     static async getCommentsByPostId(postId) {
+        const response = await fetch(`${baseURL}/comments?postId=${postId}`);
+        return response.json();
     }
 
     static async getUsers() {
@@ -17,8 +16,6 @@ export default class Api {
         return await response.json()
     }
 
-    static async getUserById(userId) {
-    }
 }
 
 

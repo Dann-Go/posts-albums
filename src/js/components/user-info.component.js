@@ -7,7 +7,8 @@ export default class UserInfo extends Component {
     }
 
     get template() {
-        return `<div id="modalWindow">
+        if (!!this.user) {
+            return `<div id="modalWindow">
                     <div id="modalWindowContent">
                         <div class="user-info">
                             <p class="user-info__text">
@@ -41,6 +42,18 @@ export default class UserInfo extends Component {
                             <p class="user-info__text">
                                 <span class="user-info__title">Company: </span>
                                 <span class="user-info__data">${this.user?.company?.name}</span>
+                            </p>
+                            <button type="button" class="custom-btn modal-close-btn" id="modalCloseBtn">Close</button>
+                        </div>
+                    </div>
+        </div>`
+        }
+        return `<div id="modalWindow">
+                    <div id="modalWindowContent">
+                        <div class="user-info">
+                            <p class="user-info__text">
+                                <span class="user-info__title">User: </span>
+                                <span class="user-info__data">unknown</span>
                             </p>
                             <button type="button" class="custom-btn modal-close-btn" id="modalCloseBtn">Close</button>
                         </div>
