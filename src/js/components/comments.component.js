@@ -15,14 +15,14 @@ export default class Comment extends Component {
 
     get template() {
         return `<div class="comment">
-                        <div class="comment__header">
-                            <div class="comment__tittle">${this.name}</div>
-                            <div class="comment__user" id="user-${this.userId}">
-                                <img src="images/abstract-user-flat-1.svg" alt="user"/>
-                            </div>
+                    <div class="comment__header">
+                        <div class="comment__tittle">${this.name}</div>
+                        <div class="comment__user" id="user-${this.userId}">
+                            <img src="../images/abstract-user-flat-1.svg" alt="user"/>
                         </div>
-                            <div class="comment__body">${this.body}</div>
-                    </div>`
+                    </div>
+                        <div class="comment__body">${this.body}</div>
+                </div>`
     }
 
     createNode(template) {

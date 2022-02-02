@@ -17,7 +17,7 @@ export default class Post extends Component {
         <div class="post__header">
             <div class="post__title">${this.title}</div>
             <div class="post__user" id="user-${this.userId}">
-                <img src="images/abstract-user-flat-1.svg" alt="user"/>
+                <img src="../images/abstract-user-flat-1.svg" alt="user"/>
             </div>
         </div>
         <div class="post__body">${this.body}</div>
