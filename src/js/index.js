@@ -9,7 +9,7 @@ window.onload = async function onLoad() {
     const page = new PostsPage(store);
 
     const postsResponse = await Api.getPosts();
-    const posts = postsResponse.map(post => new Post(post.userId, post.id, post.title, post.body));
+    const posts = postsResponse.map(post => new Post(post.userId, post.id, post.title, post.body, []));
     store.setPosts(posts);
     await page.initPostsList(posts);
 

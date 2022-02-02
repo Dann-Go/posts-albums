@@ -30,7 +30,7 @@ export default class PostsPage {
             })
             const commentShowBtn = node.querySelector("#showCommentsBtn");
             commentShowBtn.addEventListener("click", async () => {
-                if (post.showComments === false) {
+                if (post.showComments === false && post.comments.length === 0) {
                     const loader = this.initLoader();
                     this.showLoader(node, loader);
                     const commentsResponse = await Api.getCommentsByPostId(post.id);
@@ -40,6 +40,11 @@ export default class PostsPage {
                     post.showComments = true;
                     this.deleteLoader(node, loader);
                     this.initCommentsList(comments);
+                    post.comments = comments;
+                } else if (post.showComments === false && post.comments.length !== 0) {
+                    commentShowBtn.textContent = "Hide Comments";
+                    post.showComments = true;
+                    this.initCommentsList(post.comments);
                 } else {
                     const commentList = document.getElementById(`commentsList-${post.id}`);
                     console.log(commentList);

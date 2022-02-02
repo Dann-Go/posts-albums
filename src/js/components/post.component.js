@@ -2,13 +2,14 @@ import Component from "../models/component.model.js";
 
 
 export default class Post extends Component {
-    constructor(userId, id, title, body) {
+    constructor(userId, id, title, body, comments) {
         super();
         this.userId = userId;
         this.id = id;
         this.title = title;
         this.body = body;
         this.showComments = false;
+        this.comments = comments;
     }
 
     get template() {
