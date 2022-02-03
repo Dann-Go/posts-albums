@@ -43,81 +43,55 @@
     color: black;
 }
 
-.post__container {
+#modalWindow {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .35);
+    overflow: hidden;
 }
 
+#modalWindowContent {
+    min-width: 100px;
+    min-height: 100px;
+}
 
-.post {
-    display: flex;
-    flex-direction: column;
-    width: 750px;
-    background-color: lightblue;
-    margin-top: 20px;
-    border-radius: 15px;
+.user-info {
+    background-color: white;
+    border-radius: 20px;
     padding: 20px;
+    max-width: 50vw;
 }
 
-.post__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.post__user {
-    align-self: flex-start;
-    font-size: 0;
-    cursor: pointer;
+.user-info__text {
+    margin-bottom: 5px;
 
 }
 
-.post__title {
-    font-family: sans-serif;
-    font-size: 18px;
+.user-info:nth-last-child(2) {
+    padding-bottom: 20px;
+}
+
+.user-info__title {
     font-weight: bold;
-    margin-right: 20px;
+
+}
+
+.user-info__data {
     white-space: pre-line;
     overflow-wrap: normal;
     word-wrap: normal;
     word-break: normal;
     line-break: auto;
     hyphens: manual;
-}
-
-.post__user img {
-    height: 75px;
-    width: 75px;
-}
-
-.post__body {
-    height: 50%;
-    width: 100%;
-    background-color: transparent;
-    font-family: sans-serif;
-    font-size: 18px;
-    white-space: pre-line;
-    overflow-wrap: normal;
-    word-wrap: normal;
-    word-break: normal;
-    line-break: auto;
-    hyphens: manual;
-}
-
-.comments__list {
-    list-style: none;
-}
-
-.comments__toolbar {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 20px;
 }
 
 .custom-btn {
@@ -163,55 +137,4 @@
 
 .visibility-comments-btn:active, .modal-close-btn:active {
     top: 2px;
-}
-
-#modalWindow {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, .35);
-    overflow: hidden;
-}
-
-#modalWindowContent {
-    min-width: 100px;
-    min-height: 100px;
-}
-
-.user-info {
-    background-color: white;
-    border-radius: 20px;
-    padding: 20px;
-    max-width: 50vw;
-}
-
-.user-info__text {
-    margin-bottom: 5px;
-
-}
-
-.user-info:nth-last-child(2) {
-    padding-bottom: 20px;
-}
-
-.user-info__title {
-    font-weight: bold;
-
-}
-
-.user-info__data{
-    white-space: pre-line;
-    overflow-wrap: normal;
-    word-wrap: normal;
-    word-break: normal;
-    line-break: auto;
-    hyphens: manual;
 }

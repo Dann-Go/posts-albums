@@ -9,13 +9,13 @@ window.onload = async function onLoad() {
     const page = new PostsPage(store);
 
     const postsResponse = await Api.getPosts();
-    const posts = postsResponse.map(post => new Post(post.userId, post.id, post.title, post.body));
+    const posts = postsResponse.map(post => new Post(post.userId, post.id, post.title, post.body, []));
     store.setPosts(posts);
-    page.initPostsList(posts);
+    await page.initPostsList(posts);
 
     const usersResponse = await Api.getUsers();
     const users = usersResponse.map(user => new User(user.id, user.name, user.username, user.email, user.address,
-                                                     user.phone, user.website, user.company));
+        user.phone, user.website, user.company));
     store.setUsers(users);
     page.initUsersList(users);
 }
